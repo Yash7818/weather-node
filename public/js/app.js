@@ -43,8 +43,9 @@ weather.addEventListener('submit',(e) => {
 		else{
 			console.log(data.location)
 			one.textContent = data.location
-			sec.textContent = 'Weather in '+location+' is '+data.forecast.weather+' with '+data.forecast.temperature+' degrees tempreature and it feels like '+data.forecast.feelslike+' degrees'
+			// sec.textContent = 'Weather in '+location+' is '+data.forecast.weather+' with '+data.forecast.temperature+' degrees tempreature and it feels like '+data.forecast.feelslike+' degrees'
 			console.log(data.forecast)
+			sec.textContent = data.forecast
 		}
 	// console.log(data)
 	})

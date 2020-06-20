@@ -13,19 +13,19 @@ const forecast = (longitude,latitude,call) =>{
 		call('unable to find the location!',undefined)
 	}
 	else{
-	// console.log(response.body.current.weather_descriptions[0]+' IT IS '+response.body.current.temperature +' degrees outside ,' + 'feels like '+response.body.current.feelslike)
-	call(undefined,{
-		weather:body.current.weather_descriptions[0],
-		temperature : body.current.temperature,
-		feelslike : body.current.feelslike,
-		humidity : body.current.humidity,
-		cloudcover : body.current.cloudcover,
-		timezone : body.location.timezone_id
-
-	   })
+// 	console.log(response.body.current.weather_descriptions[0]+' IT IS '+response.body.current.temperature +' degrees outside ,' + 'feels like '+response.body.current.feelslike+'with the humidity of '+body.current.humidity+'% in'+body.location.timezone_id
+// +'timezone')
+	call(undefined,response.body.current.weather_descriptions[0]+' IT IS '+response.body.current.temperature +' degrees outside ,' + 'feels like '+response.body.current.feelslike+'with the humidity of '+body.current.humidity+'% in'+body.location.timezone_id
++'timezone')
     }
 
    })
 }
 
 module.exports = forecast
+// weather:body.current.weather_descriptions[0],
+// 		temperature : body.current.temperature,
+// 		feelslike : body.current.feelslike,
+// 		humidity : body.current.humidity,
+// 		cloudcover : body.current.cloudcover,
+// 		timezone : body.location.timezone_id
