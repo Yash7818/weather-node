@@ -15,8 +15,7 @@ const forecast = (longitude,latitude,call) =>{
 	else{
 // 	console.log(response.body.current.weather_descriptions[0]+' IT IS '+response.body.current.temperature +' degrees outside ,' + 'feels like '+response.body.current.feelslike+'with the humidity of '+body.current.humidity+'% in'+body.location.timezone_id
 // +'timezone')
-	call(undefined,response.body.current.weather_descriptions[0]+' IT IS '+response.body.current.temperature +' degrees outside ,' + 'feels like '+response.body.current.feelslike+'with the humidity of '+body.current.humidity+'% in'+body.location.timezone_id
-+'timezone')
+	call(undefined,body.current.weather_descriptions[0]+'. IT IS '+body.current.temperature +' degrees outside ,' + 'feels like '+body.current.feelslike+'with the humidity of '+body.current.humidity+'%')
     }
 
    })
