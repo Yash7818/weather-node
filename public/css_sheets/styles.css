@@ -1,0 +1,52 @@
+
+body{
+	color:#333333;
+    font-family: 'Fredoka One', cursive;
+    max-width: 650px;
+    margin:0 auto;
+    padding:0 25px;
+
+
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.main{
+	flex-grow: 1;
+}
+footer{
+	color:#888888;
+	border-top: 1.2px solid #eeeeee;
+	margin-top:16px ;
+	padding: 16px 0 0;
+}
+header{
+	margin-top: 16px;
+	margin-bottom: 48px;
+}
+h1{
+	font-size: 64px;
+	margin-bottom: 16px;
+}
+header a{
+	text-decoration: none;
+	color:#888888;
+}
+img{
+	height : 80vh;
+}
+
+input{
+	padding: 5px;
+	border:1px solid #888888;
+	border-radius: 2px;
+	font-family: 'Fredoka One', cursive;
+}
+
+button{
+	padding: 4.8px;
+	border:1px solid #888888;
+	border-radius:2px;
+    font-family: 'Fredoka One', cursive;
+}
