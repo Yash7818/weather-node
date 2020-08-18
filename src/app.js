@@ -72,6 +72,23 @@ app.get('/weather', (req,res) =>{
 
 })
 
+app.get('/geoloc',(req,res)=>{
+	
+	forecast(req.query.longitude,req.query.latitude,(error,data) => {
+		if(error){
+			return res.send({
+				error: error
+			})
+		}
+		res.send({
+			location:'Your Location',
+			forecast:data
+		})
+	})
+
+
+})
+
 app.get('/*', (req,res) =>{
 	res.render('404', {
 		title : '404',

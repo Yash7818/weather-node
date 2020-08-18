@@ -25,7 +25,38 @@ const one = document.querySelector('#one')
 
 const sec = document.querySelector('#sec')
 
+const $getlocation = document.querySelector('#get_location')
+
 // one.textContent = 'from javascript'
+
+$getlocation.addEventListener('click',()=>{
+	if(!navigator.geolocation){
+		return alert("geolocation is not supported");
+	}
+	one.textContent = 'loading...'
+	sec.textContent = ''
+	$getlocation.setAttribute("disabled","disabled")
+	navigator.geolocation.getCurrentPosition((position)=>{
+		console.log(position)
+		fetch(`/geoloc?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}`).then((response)=>{
+			response.json().then((data)=>{
+				if(data.error){
+					console.log(data.error);
+					one.textContent = data.error
+				}
+				else{
+					console.log(data.location)
+					one.textContent = data.location
+					console.log(data.forecast)
+					sec.textContent = data.forecast
+				}
+			})
+			$getlocation.removeAttribute("disabled")
+		})
+
+	})
+	
+})
 
 weather.addEventListener('submit',(e) => {
 	e.preventDefault()
