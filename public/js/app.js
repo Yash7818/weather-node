@@ -25,6 +25,8 @@ const one = document.querySelector('#one')
 
 const sec = document.querySelector('#sec')
 
+const $searchlocation = document.querySelector('#search')
+
 const $getlocation = document.querySelector('#get_location')
 
 // one.textContent = 'from javascript'
@@ -46,6 +48,7 @@ $getlocation.addEventListener('click',()=>{
 				}
 				else{
 					console.log(data.location)
+					// search.value = data.location
 					one.textContent = data.location
 					console.log(data.forecast)
 					sec.textContent = data.forecast
@@ -63,7 +66,7 @@ weather.addEventListener('submit',(e) => {
 	const location = search.value
 	one.textContent = 'loading...'
 	sec.textContent =''
-
+	$searchlocation.setAttribute("disabled","disabled")
 	// console.log(location)
 	fetch('/weather?address='+location).then((response) =>{
 	response.json().then((data) =>{
@@ -73,6 +76,7 @@ weather.addEventListener('submit',(e) => {
 	}
 		else{
 			console.log(data.location)
+			search.value = ''
 			one.textContent = data.location
 			// sec.textContent = 'Weather in '+location+' is '+data.forecast.weather+' with '+data.forecast.temperature+' degrees tempreature and it feels like '+data.forecast.feelslike+' degrees'
 			console.log(data.forecast)
@@ -80,5 +84,6 @@ weather.addEventListener('submit',(e) => {
 		}
 	// console.log(data)
 	})
+	$searchlocation.removeAttribute("disabled")
 })
 })
