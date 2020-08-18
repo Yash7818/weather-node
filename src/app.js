@@ -64,7 +64,7 @@ app.get('/weather', (req,res) =>{
 		      res.send({
 		      	location:location,
 		      	address : req.query.address,
-		      	forecast:data1
+		      	forecast:data1.forecast
             })
 	   })
 
@@ -81,8 +81,8 @@ app.get('/geoloc',(req,res)=>{
 			})
 		}
 		res.send({
-			location:'Your Location',
-			forecast:data
+			location:data.location,
+			forecast:data.forecast
 		})
 	})
 
